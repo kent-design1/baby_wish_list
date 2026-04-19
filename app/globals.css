@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Jost", sans-serif;
+
+  --color-ivory:   #fdf8f3;
+  --color-petal:   #f2d9d9;
+  --color-rose:    #d4879a;
+  --color-blush:   #e8b4c0;
+  --color-sage:    #a8c5a0;
+  --color-sage-lt: #ddeeda;
+  --color-warm:    #c47a5a;
+  --color-caramel: #e8c49a;
+  --color-brown:   #4a3328;
+  --color-mid:     #8a6a5e;
+  --color-dust:    #ede0d8;
+  --color-white:   #fffcfa;
+
+  --animate-fade-up:  fadeUp 0.4s ease both;
+  --animate-float:    float 4s ease-in-out infinite;
+  --animate-pop-in:   popIn 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-slide-up: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* CSS variables for inline styles (used in components with style={{}}) */
+:root {
+  --ivory:   #fdf8f3;
+  --petal:   #f2d9d9;
+  --rose:    #d4879a;
+  --blush:   #e8b4c0;
+  --sage:    #a8c5a0;
+  --sage-lt: #ddeeda;
+  --warm:    #c47a5a;
+  --caramel: #e8c49a;
+  --brown:   #4a3328;
+  --mid:     #8a6a5e;
+  --dust:    #ede0d8;
+  --white:   #fffcfa;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: "Jost", sans-serif; }
+
+/* Utility classes used in components */
+.font-display { font-family: "Cormorant Garamond", serif; }
+
+.tabs-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.tabs-scroll::-webkit-scrollbar { display: none; }
+
+/* Custom animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
