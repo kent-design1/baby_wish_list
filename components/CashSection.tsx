@@ -21,7 +21,7 @@ export default function CashSection({ contributors, onAdd }: CashSectionProps) {
         </h2>
         <p className="mb-6 text-sm leading-relaxed" style={{ color: "var(--mid)" }}>
           Prefer to give cash instead? We&apos;d be so grateful! Add your name below
-          and Latifa will make sure to thank you with the warmest hug. 🤍
+          and We will make sure to thank you with the warmest hug. 🤍
         </p>
 
         {/* Contributors */}
