@@ -12,6 +12,24 @@ export function useRegistry() {
     const [state, setState] = useState<RegistryState>({ claims: {}, cash: [] });
     const [hydrated, setHydrated] = useState(false);
 
+    async function load() {
+        console.log("ENV URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+        console.log("ENV KEY:", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.slice(0, 20));
+
+        const [{data: claimsData, error: claimsError}, {data: cashData, error: cashError}] = await Promise.all([
+            supabase.from("claims").select("product_id, nickname"),
+            supabase.from("cash_contributors").select("nickname"),
+        ]);
+
+        console.log("Claims data:", claimsData);
+        console.log("Claims error:", claimsError);
+        console.log("Cash data:", cashData);
+        console.log("Cash error:", cashError);
+
+        // ... rest of the function stays the same
+
+    }
+
     // Load all data on mount
     useEffect(() => {
         async function load() {
@@ -31,6 +49,7 @@ export function useRegistry() {
             });
             setHydrated(true);
         }
+
 
         load();
 
