@@ -40,7 +40,7 @@ export default function ProductCard({
       {/* Image */}
       <div
         className="relative h-48 w-full overflow-hidden"
-        style={{ background: "#fffff" }}
+        style={{ background: "#ffffff" }}
       >
         {product.img && !imgError ? (
           <Image

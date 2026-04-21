@@ -108,7 +108,7 @@ export default function RegistryPage() {
         className="border-t pb-8 pt-6 text-center font-display italic tracking-wide"
         style={{ borderColor: "var(--dust)", color: "#c0a898", fontSize: "0.95rem" }}
       >
-        Made with love for Latifa, Kent &amp; their little girl arriving July 2026 🌸
+        Made with love for Latifa, Kent &amp; their little girl Naya arriving late July or early August 2026 🌸
       </footer>
 
       <ClaimModal

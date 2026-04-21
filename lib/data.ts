@@ -155,7 +155,7 @@ export const PRODUCTS: Product[] = [
         name: "Momcozy 7-in-1 Baby Bottle Cleaning Brush Set – Silicone Brush, Nipple Brush, Soap Dispenser & Drying Rack",
         price: "CHF 14.20",
         rating: "4.4",
-        img: null,
+        img: "https://m.media-amazon.com/images/I/41tIv4qTcKL.jpg",
     },
 
     // 🎁 Play & Sleep
@@ -189,6 +189,6 @@ export const PRODUCTS: Product[] = [
         name: "Fisher-Price Snooze Music Box Plush – Soothing Music & Rhythmic Movements, from Birth (FXC66)",
         price: "CHF 24.05",
         rating: "4.6",
-        img: null,
+        img: "https://m.media-amazon.com/images/I/411CcrovTDL.jpg",
     },
 ];
