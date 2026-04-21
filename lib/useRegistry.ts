@@ -1,64 +1,94 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { supabase } from "./supabase";
 
 export interface RegistryState {
-  claims: Record<string, string>; // productId -> nickname
-  cash: string[];                 // list of cash contributor names
-}
-
-const KEY = "registry_july2026_v1";
-
-function loadState(): RegistryState {
-  if (typeof window === "undefined") return { claims: {}, cash: [] };
-  try {
-    const raw = localStorage.getItem(KEY);
-    return raw ? JSON.parse(raw) : { claims: {}, cash: [] };
-  } catch {
-    return { claims: {}, cash: [] };
-  }
-}
-
-function saveState(s: RegistryState) {
-  try {
-    localStorage.setItem(KEY, JSON.stringify(s));
-  } catch {}
+    claims: Record<string, string>;
+    cash: string[];
 }
 
 export function useRegistry() {
-  const [state, setState] = useState<RegistryState>({ claims: {}, cash: [] });
-  const [hydrated, setHydrated] = useState(false);
+    const [state, setState] = useState<RegistryState>({ claims: {}, cash: [] });
+    const [hydrated, setHydrated] = useState(false);
 
-  useEffect(() => {
-    setState(loadState());
-    setHydrated(true);
-  }, []);
+    // Load all data on mount
+    useEffect(() => {
+        async function load() {
+            const [{ data: claimsData }, { data: cashData }] = await Promise.all([
+                supabase.from("claims").select("product_id, nickname"),
+                supabase.from("cash_contributors").select("nickname"),
+            ]);
 
-  const claimItem = useCallback((productId: string, nickname: string) => {
-    setState((prev) => {
-      const next = { ...prev, claims: { ...prev.claims, [productId]: nickname } };
-      saveState(next);
-      return next;
-    });
-  }, []);
+            const claims: Record<string, string> = {};
+            for (const row of claimsData ?? []) {
+                claims[row.product_id] = row.nickname;
+            }
 
-  const unclaimItem = useCallback((productId: string) => {
-    setState((prev) => {
-      const claims = { ...prev.claims };
-      delete claims[productId];
-      const next = { ...prev, claims };
-      saveState(next);
-      return next;
-    });
-  }, []);
+            setState({
+                claims,
+                cash: (cashData ?? []).map((r) => r.nickname),
+            });
+            setHydrated(true);
+        }
 
-  const addCash = useCallback((nickname: string) => {
-    setState((prev) => {
-      const next = { ...prev, cash: [...prev.cash, nickname] };
-      saveState(next);
-      return next;
-    });
-  }, []);
+        load();
 
-  return { state, hydrated, claimItem, unclaimItem, addCash };
+        // Real-time: claims table
+        const claimsSub = supabase
+            .channel("claims-channel")
+            .on("postgres_changes", { event: "*", schema: "public", table: "claims" },
+                (payload) => {
+                    if (payload.eventType === "INSERT") {
+                        const { product_id, nickname } = payload.new as { product_id: string; nickname: string };
+                        setState((prev) => ({
+                            ...prev,
+                            claims: { ...prev.claims, [product_id]: nickname },
+                        }));
+                    }
+                    if (payload.eventType === "DELETE") {
+                        const { product_id } = payload.old as { product_id: string };
+                        setState((prev) => {
+                            const claims = { ...prev.claims };
+                            delete claims[product_id];
+                            return { ...prev, claims };
+                        });
+                    }
+                }
+            )
+            .subscribe();
+
+        // Real-time: cash table
+        const cashSub = supabase
+            .channel("cash-channel")
+            .on("postgres_changes", { event: "INSERT", schema: "public", table: "cash_contributors" },
+                (payload) => {
+                    const { nickname } = payload.new as { nickname: string };
+                    setState((prev) => ({
+                        ...prev,
+                        cash: [...prev.cash, nickname],
+                    }));
+                }
+            )
+            .subscribe();
+
+        return () => {
+            supabase.removeChannel(claimsSub);
+            supabase.removeChannel(cashSub);
+        };
+    }, []);
+
+    const claimItem = useCallback(async (productId: string, nickname: string) => {
+        await supabase.from("claims").upsert({ product_id: productId, nickname });
+    }, []);
+
+    const unclaimItem = useCallback(async (productId: string) => {
+        await supabase.from("claims").delete().eq("product_id", productId);
+    }, []);
+
+    const addCash = useCallback(async (nickname: string) => {
+        await supabase.from("cash_contributors").insert({ nickname });
+    }, []);
+
+    return { state, hydrated, claimItem, unclaimItem, addCash };
 }
