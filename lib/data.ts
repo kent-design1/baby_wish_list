@@ -366,24 +366,24 @@ export const PRODUCTS: Product[] = [
         img: "https://www.orchestra.ch/uploads/styles/thehub_higher/catalogues_price_image/cq5dam.web.1280.1280_3_52.jpeg",
         link: "https://www.orchestra.ch/fr/produit-eveil-et-jeux-livre-chicco-livre-de-la-ferme-6-36m-c54-p287368.php",
     },
-    {
-        id: "p37",
-        cat: "play",
-        name: "L'Imagerie des Tout-Petits – Les Premiers Mots (Dargaud)",
-        price: "14.15",
-        rating: "4.8",
-        img: "https://www.orchestra.ch/uploads/styles/thehub_higher/catalogues_price_image/9782215177951_2.jpg",
-        link: "https://www.orchestra.ch/fr/produit-eveil-et-jeux-livre-dargaud-livre-l-imagerie-des-tout-petits-les-premiers-mots-c54-p347797.php",
-    },
-    {
-        id: "p38",
-        cat: "play",
-        name: "L'Imagerie des Tout-Petits – Le Corps (Dargaud)",
-        price: "14.15",
-        rating: "4.8",
-        img: "https://www.orchestra.ch/uploads/styles/thehub_higher/catalogues_price_image/9782215162971.jpg",
-        link: "https://www.orchestra.ch/fr/produit-eveil-et-jeux-livre-dargaud-livre-l-imagerie-des-tout-petits-le-corps-c54-p347744.php",
-    },
+    // {
+    //     id: "p37",
+    //     cat: "play",
+    //     name: "L'Imagerie des Tout-Petits – Les Premiers Mots (Dargaud)",
+    //     price: "14.15",
+    //     rating: "4.8",
+    //     img: "https://www.orchestra.ch/uploads/styles/thehub_higher/catalogues_price_image/9782215177951_2.jpg",
+    //     link: "https://www.orchestra.ch/fr/produit-eveil-et-jeux-livre-dargaud-livre-l-imagerie-des-tout-petits-les-premiers-mots-c54-p347797.php",
+    // },
+    // {
+    //     id: "p38",
+    //     cat: "play",
+    //     name: "L'Imagerie des Tout-Petits – Le Corps (Dargaud)",
+    //     price: "14.15",
+    //     rating: "4.8",
+    //     img: "https://www.orchestra.ch/uploads/styles/thehub_higher/catalogues_price_image/9782215162971.jpg",
+    //     link: "https://www.orchestra.ch/fr/produit-eveil-et-jeux-livre-dargaud-livre-l-imagerie-des-tout-petits-le-corps-c54-p347744.php",
+    // },
 
 ];
 
