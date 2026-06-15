@@ -29,8 +29,8 @@ export default function Hero({ total, claimed }: HeroProps) {
                 <div key={i} className={`sparkle s${i + 1}`} />
             ))}
 
-            {/* Pulse rings */}
-            <div className="ring r1" /><div className="ring r2" /><div className="ring r3" />
+            {/*/!* Pulse rings *!/*/}
+            {/*<div className="ring r1" /><div className="ring r2" /><div className="ring r3" />*/}
 
             {/* Content */}
             <div className="relative z-10">

@@ -43,6 +43,10 @@ export default function ProductCard({
         style={{ background: "#ffffff" }}
       >
         {product.img && !imgError ? (
+            <a
+                href={product.link ?? REGISTRY_URL}
+                target="_blank"
+                rel="noopener noreferrer" >
           <Image
             src={product.img}
             alt={product.name}
@@ -51,6 +55,7 @@ export default function ProductCard({
             onError={() => setImgError(true)}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
+            </a>
         ) : (
           <div className="flex h-full w-full items-center justify-center text-5xl">
             {catEmoji}
@@ -131,13 +136,13 @@ export default function ProductCard({
         )}
 
         <a
-          href={REGISTRY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+            href={product.link ?? REGISTRY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           className="mt-2 block text-center text-xs opacity-60 transition-opacity hover:opacity-100"
           style={{ color: "var(--mid)" }}
         >
-          View on Amazon ↗
+          View on Website ↗
         </a>
       </div>
     </div>

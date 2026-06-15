@@ -63,43 +63,43 @@ export default function CashSection({ contributors, onAdd }: CashSectionProps) {
                                 <span>💸</span>
                                 <div>
                                     <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: "var(--mid)" }}>Twint</p>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brown)" }}>+41 XX XXX XX XX</p>
+                                    <p className="text-sm font-medium" style={{ color: "var(--brown)" }}>+41 782 05 0217</p>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-3">
-                                <span>🏦</span>
-                                <div>
-                                    <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: "var(--mid)" }}>Bank Transfer</p>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brown)" }}>IBAN: CH00 0000 0000 0000 0000 0</p>
-                                </div>
-                            </div>
+                            {/*<div className="flex items-center gap-3">*/}
+                            {/*    <span>🏦</span>*/}
+                            {/*    <div>*/}
+                            {/*        <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: "var(--mid)" }}>Bank Transfer</p>*/}
+                            {/*        <p className="text-sm font-medium" style={{ color: "var(--brown)" }}>IBAN: CH00 0000 0000 0000 0000 0</p>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
 
                     {/* Option 3 - QR */}
-                    <div
-                        className="rounded-2xl p-4 text-center"
-                        style={{ background: "rgba(255,255,255,0.75)", border: "1px solid var(--petal)" }}
-                    >
-                        <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--rose)" }}>
-                            📲 Scan to Pay
-                        </p>
-                        <div
-                            className="mx-auto w-36 h-36 rounded-2xl overflow-hidden flex items-center justify-center"
-                            style={{ background: "white", border: "2px solid var(--petal)" }}
-                        >
-                            <Image
-                                src={qrcode}
-                                alt="Payment QR Code"
-                                className="w-full h-full object-contain p-2"
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).style.display = "none";
-                                    (e.target as HTMLImageElement).parentElement!.innerHTML =
-                                        '<p style="font-size:0.7rem;color:#c0a898;padding:1rem;text-align:center">Add QR code to<br/>public/images/qr-code.png</p>';
-                                }}
-                            />
-                        </div>
-                    </div>
+                    {/*<div*/}
+                    {/*    className="rounded-2xl p-4 text-center"*/}
+                    {/*    style={{ background: "rgba(255,255,255,0.75)", border: "1px solid var(--petal)" }}*/}
+                    {/*>*/}
+                    {/*    <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--rose)" }}>*/}
+                    {/*        📲 Scan to Pay*/}
+                    {/*    </p>*/}
+                    {/*    <div*/}
+                    {/*        className="mx-auto w-36 h-36 rounded-2xl overflow-hidden flex items-center justify-center"*/}
+                    {/*        style={{ background: "white", border: "2px solid var(--petal)" }}*/}
+                    {/*    >*/}
+                    {/*        <Image*/}
+                    {/*            src={qrcode}*/}
+                    {/*            alt="Payment QR Code"*/}
+                    {/*            className="w-full h-full object-contain p-2"*/}
+                    {/*            onError={(e) => {*/}
+                    {/*                (e.target as HTMLImageElement).style.display = "none";*/}
+                    {/*                (e.target as HTMLImageElement).parentElement!.innerHTML =*/}
+                    {/*                    '<p style="font-size:0.7rem;color:#c0a898;padding:1rem;text-align:center">Add QR code to<br/>public/images/qr-code.png</p>';*/}
+                    {/*            }}*/}
+                    {/*        />*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
 
                 {/* Contributors */}
