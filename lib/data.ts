@@ -192,15 +192,15 @@ export const PRODUCTS: Product[] = [
     //     img: "https://m.media-amazon.com/images/I/41I7Xj51ebL.jpg",
     //     link: "https://www.amazon.de/baby-reg/latifa-qatrani-july-2026-nidau/1CDUDP4MXNUVW"
     // },
-    {
-        id: "p18",
-        cat: "play",
-        name: "Momcozy Portable Sound Machine with Night Light – 20 Soothing Sounds, Stroller Clip",
-        price: "CHF 27.56",
-        rating: "4.4",
-        img: "https://m.media-amazon.com/images/I/51aVQAOf0lL.jpg",
-        link: "https://www.amazon.de/-/en/Momcozy-Portable-Soothing-Long-Lasting-Stroller/dp/B0F1Y6V1JV?colid=1CDUDP4MXNUVW&coliid=I2CQTZ8P1VZW9T&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&th=1"
-    },
+    // {
+    //     id: "p18",
+    //     cat: "play",
+    //     name: "Momcozy Portable Sound Machine with Night Light – 20 Soothing Sounds, Stroller Clip",
+    //     price: "CHF 27.56",
+    //     rating: "4.4",
+    //     img: "https://m.media-amazon.com/images/I/51aVQAOf0lL.jpg",
+    //     link: "https://www.amazon.de/-/en/Momcozy-Portable-Soothing-Long-Lasting-Stroller/dp/B0F1Y6V1JV?colid=1CDUDP4MXNUVW&coliid=I2CQTZ8P1VZW9T&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&th=1"
+    // },
     {
         id: "p20",
         cat: "play",
