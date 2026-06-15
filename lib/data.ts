@@ -76,7 +76,7 @@ export const PRODUCTS: Product[] = [
         price: "CHF 33.04",
         rating: "4.7",
         img: "https://m.media-amazon.com/images/I/51pIuf3qfFL.jpg",
-        link: "https://www.amazon.de/baby-reg/latifa-qatrani-july-2026-nidau/1CDUDP4MXNUVW"
+        link: "https://www.amazon.de/-/en/Pampers-Nappies-Premium-Protection-Sensitive/dp/B0BLW8TF8V?colid=1CDUDP4MXNUVW&coliid=I36VJRMNPN9TV9&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D"
     },
     // {
     //     id: "p15",
@@ -199,7 +199,7 @@ export const PRODUCTS: Product[] = [
         price: "CHF 27.56",
         rating: "4.4",
         img: "https://m.media-amazon.com/images/I/51aVQAOf0lL.jpg",
-        link: "https://www.amazon.de/baby-reg/latifa-qatrani-july-2026-nidau/1CDUDP4MXNUVW"
+        link: "https://www.amazon.de/-/en/Momcozy-Portable-Soothing-Long-Lasting-Stroller/dp/B0F1Y6V1JV?colid=1CDUDP4MXNUVW&coliid=I2CQTZ8P1VZW9T&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&th=1"
     },
     {
         id: "p20",
@@ -208,7 +208,7 @@ export const PRODUCTS: Product[] = [
         price: "CHF 24.05",
         rating: "4.6",
         img: "https://m.media-amazon.com/images/I/411CcrovTDL.jpg",
-        link: "https://www.amazon.de/baby-reg/latifa-qatrani-july-2026-nidau/1CDUDP4MXNUVW"
+        link: "https://www.amazon.de/-/en/Fisher-Price-FXC66-Soothing-Rhythmic-Movements/dp/B07N1JP56L?colid=1CDUDP4MXNUVW&coliid=I3OS7KR9TZPHIX&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&th=1"
     },
 
     // 🌸 Daily Essentials
