@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "*.amplience.net" },
       { protocol: "https", hostname: "*.galaxus.com" },
       { protocol: "https", hostname: "*.orchestra.ch" },
+      { protocol: "https", hostname: "owletcare.ch" },
     ],
   },
 };
